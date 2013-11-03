@@ -104,7 +104,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    return 113;
 }
 
 
@@ -146,7 +146,7 @@
     NSLog(@"the return is %@", @"error ");
     
 }
-
+static int IS_loadingMore = 0;
 -(void)getPagesInformation:(NSString*)inputstring
 {
     
@@ -169,6 +169,23 @@
     }
     for (unsigned i = 0; i< [pagesArray count]; i++) {
         NSString* temp = [pagesArray objectAtIndex:i];
+        temp = [temp stringByReplacingOccurrencesOfString:@"</a>" withString:@"</a>\n"];
+        
+        NSLog(@"%@",temp);
+        
+        NSArray* imageArray= [temp stringsByExtractingGroupsUsingRegexPattern:@"<imgsrc=(.*)/></"];
+        NSLog(@"The image string is %@", [imageArray objectAtIndex:0]);
+        
+        NSArray* titleArray = [temp stringsByExtractingGroupsUsingRegexPattern:@"title\">.*\">(.*)</a>"];
+        NSLog(@"the title string is %@", [titleArray objectAtIndex:0]);
+        
+        NSArray* contentArray = [temp stringsByExtractingGroupsUsingRegexPattern:@"<divclass=\"text\">(.*)"];
+        NSLog(@"the content string is %@", [contentArray objectAtIndex:0]);
+        
+        NSArray* urlArray = [temp stringsByExtractingGroupsUsingRegexPattern:@"atarget=\"_blank\"href=(.*)\">"];
+        NSLog(@"the detail url string is %@", [urlArray objectAtIndex:0]);
+        
+        
                NSLog(@"%@",temp);
         
     }
