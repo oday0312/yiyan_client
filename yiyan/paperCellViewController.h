@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ASIHTTPRequest/ASIHTTPRequest.h"
 @interface paperCellViewController : UITableViewCell
 {
     

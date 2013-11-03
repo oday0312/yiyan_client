@@ -8,6 +8,7 @@
 
 #import "paperListViewController.h"
 #import "paperCellViewController.h"
+#import "NSString+PDRegex.h"
 @interface paperListViewController ()
 
 @end
@@ -55,6 +56,9 @@
         for (int i = 0; i<5; i++) {
             [self._data insertObject:[formatter stringFromDate:[NSDate date]] atIndex:0];
         }
+        
+        
+        [self startHttp:@""];
         
     } else {
         for (int i = 0; i<5; i++) {
@@ -104,4 +108,96 @@
 }
 
 
+
+
+
+-(void)startHttp:(NSString*)inputString
+{
+    
+   
+    NSString* urlstring = [@"" stringByAppendingFormat:@"http://select.yeeyan.org/lists/social/horizontal/1"];
+    NSURL *url = [NSURL URLWithString:urlstring];
+    
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    
+    [request setDelegate:self];
+    
+    [request startAsynchronous];
+}
+
+- (void)requestFinished:(ASIHTTPRequest *)request
+{
+    // 当以文本形式读取返回内容时用这个方法
+    //NSString *responseString = [request responseString];
+    // 当以二进制形式读取返回内容时用这个方法
+    //NSData *responseData = [request responseData];
+    
+    NSString*  responseString =  [[NSString alloc] initWithData:request.responseData encoding:NSUTF8StringEncoding] ;
+    
+    NSLog(@"the return is %@", responseString);
+    [self getPagesInformation:responseString];
+}
+
+- (void)requestFailed:(ASIHTTPRequest *)request
+
+{
+    
+    NSError *error = [request error];
+    NSLog(@"the return is %@", @"error ");
+    
+}
+
+-(void)getPagesInformation:(NSString*)inputstring
+{
+    
+    inputstring = [inputstring stringByReplacingOccurrencesOfString:@" " withString:@""];
+    inputstring = [inputstring stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+    inputstring = [inputstring stringByReplacingOccurrencesOfString:@"\t" withString:@""];
+    inputstring = [inputstring stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    
+    inputstring = [inputstring stringByReplacingOccurrencesOfString:@"s_i_articleclearfix" withString:@"\n"];
+    
+    
+    NSLog(@" the new string is %@", inputstring);
+    NSArray* pagesArray= [inputstring stringsByExtractingGroupsUsingRegexPattern:@"imageclearfix(.*)</div></"];
+    
+    
+    NSLog(@"the match result count is %i",[pagesArray count]);
+    
+    if ([pagesArray count]==0) {
+
+    }
+    for (unsigned i = 0; i< [pagesArray count]; i++) {
+        NSString* temp = [pagesArray objectAtIndex:i];
+               NSLog(@"%@",temp);
+        
+    }
+}
+
+
+
 @end
+
+
+
+
+//
+//-(void)startHttp:(NSString*)inputString
+//{
+//    
+//    ///////
+//    NSString *postURL = [NSString stringWithFormat:@"http://sfz.8684.cn/"];
+//    
+//    ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:postURL]];
+//    
+//    if ([inputString isEqualToString:@"a"]) {
+//        [request addPostValue:@"43010419860419588X" forKey:@"userid"];
+//    }
+//    else{
+//        [request addPostValue:inputString forKey:@"userid"];
+//        
+//    }
+//    
+//    request.delegate= self;
+//    [request startSynchronous];
+//}

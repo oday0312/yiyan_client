@@ -10,8 +10,11 @@
 #import "MJRefreshFooterView.h"
 #import "MJRefreshHeaderView.h"
 #import "GHRootViewController.h"
+#import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
+
 @interface paperListViewController : GHRootViewController
-<UITableViewDataSource, UITableViewDelegate,MJRefreshBaseViewDelegate>
+<UITableViewDataSource, UITableViewDelegate,MJRefreshBaseViewDelegate,ASICacheDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 
 @property(nonatomic, retain) MJRefreshFooterView *_footer;
