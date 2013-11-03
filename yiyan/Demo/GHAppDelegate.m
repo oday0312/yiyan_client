@@ -12,14 +12,8 @@
 #import "GHRevealViewController.h"
 #import "GHSidebarSearchViewController.h"
 #import "GHSidebarSearchViewControllerDelegate.h"
-#import "information1ViewController.h"
-#import "information2ViewController.h"
-#import "information3ViewController.h"
-#import "information4ViewController.h"
-#import "information5ViewController.h"
-#import "information6ViewController.h"
 #import "MobClick.h"
-
+#import "paperListViewController.h"
 #pragma mark -
 #pragma mark Private Interface
 @interface GHAppDelegate () <GHSidebarSearchViewControllerDelegate>
@@ -59,26 +53,26 @@
 	];
 	NSArray *controllers = @[
 		@[
-			[[UINavigationController alloc] initWithRootViewController:[[information1ViewController alloc] initWithTitle:@"身份证信息查询" withRevealBlock:revealBlock]]
+			[[UINavigationController alloc] initWithRootViewController:[[paperListViewController alloc] initWithTitle:@"译言精选－社会" withRevealBlock:revealBlock]]
 		],
 		@[
-			[[UINavigationController alloc] initWithRootViewController:[[information2ViewController alloc] initWithTitle:@"手机号码归属地查询" withRevealBlock:revealBlock]],
-			[[UINavigationController alloc] initWithRootViewController:[[information3ViewController alloc] initWithTitle:@"IP地址查询" withRevealBlock:revealBlock]],
-			[[UINavigationController alloc] initWithRootViewController:[[information4ViewController alloc] initWithTitle:@"生日密码" withRevealBlock:revealBlock]],
-			[[UINavigationController alloc] initWithRootViewController:[[information5ViewController alloc] initWithTitle:@"火车时刻查询" withRevealBlock:revealBlock]],
-			[[UINavigationController alloc] initWithRootViewController:[[information6ViewController alloc] initWithTitle:@"全国航班进出港实时动态查询 " withRevealBlock:revealBlock]]
+			[[UINavigationController alloc] initWithRootViewController:[[paperListViewController alloc] initWithTitle:@"译言精选－科学" withRevealBlock:revealBlock]],
+			[[UINavigationController alloc] initWithRootViewController:[[paperListViewController alloc] initWithTitle:@"译言精选－生活" withRevealBlock:revealBlock]],
+			[[UINavigationController alloc] initWithRootViewController:[[paperListViewController alloc] initWithTitle:@"译言精选－经济" withRevealBlock:revealBlock]],
+			[[UINavigationController alloc] initWithRootViewController:[[paperListViewController alloc] initWithTitle:@"译言精选－文化" withRevealBlock:revealBlock]],
+			
 		]
 	];
 	NSArray *cellInfos = @[
 		@[
-			@{kSidebarCellImageKey: [UIImage imageNamed:@"searchBarIcon.png"], kSidebarCellTextKey: NSLocalizedString(@"身份证信息查询", @"")}
+			@{kSidebarCellImageKey: [UIImage imageNamed:@"searchBarIcon.png"], kSidebarCellTextKey: NSLocalizedString(@"社会", @"")}
 		],
 		@[
-			@{kSidebarCellImageKey: [UIImage imageNamed:@"user.png"], kSidebarCellTextKey: NSLocalizedString(@"手机号码归属地查询", @"")},
-			@{kSidebarCellImageKey: [UIImage imageNamed:@"user.png"], kSidebarCellTextKey: NSLocalizedString(@"IP地址查询", @"")},
-			@{kSidebarCellImageKey: [UIImage imageNamed:@"user.png"], kSidebarCellTextKey: NSLocalizedString(@"生日密码", @"")},
-			@{kSidebarCellImageKey: [UIImage imageNamed:@"user.png"], kSidebarCellTextKey: NSLocalizedString(@"火车时刻查询", @"")},
-			@{kSidebarCellImageKey: [UIImage imageNamed:@"user.png"], kSidebarCellTextKey: NSLocalizedString(@"全国航班进出港实时动态查询 ", @"")},
+			@{kSidebarCellImageKey: [UIImage imageNamed:@"user.png"], kSidebarCellTextKey: NSLocalizedString(@"科学", @"")},
+			@{kSidebarCellImageKey: [UIImage imageNamed:@"user.png"], kSidebarCellTextKey: NSLocalizedString(@"生活", @"")},
+			@{kSidebarCellImageKey: [UIImage imageNamed:@"user.png"], kSidebarCellTextKey: NSLocalizedString(@"经济", @"")},
+			@{kSidebarCellImageKey: [UIImage imageNamed:@"user.png"], kSidebarCellTextKey: NSLocalizedString(@"文化", @"")},
+			
 		]
 	];
 	
