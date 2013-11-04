@@ -10,7 +10,7 @@
 
 #define kPullToRefresh @"上拉可以加载更多数据"
 #define kReleaseToRefresh @"松开立即加载更多数据"
-#define kRefreshing @"MJ哥正在帮你加载数据..."
+#define kRefreshing @"正在帮你加载数据..."
 
 #import "MJRefreshFooterView.h"
 

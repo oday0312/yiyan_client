@@ -9,6 +9,8 @@
 #import "paperListViewController.h"
 #import "paperCellViewController.h"
 #import "NSString+PDRegex.h"
+#import "imageCacheManager.h"
+#import "paperDetailWebViewController.h"
 @interface paperListViewController ()
 
 @end
@@ -53,19 +55,15 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"HH : mm : ss.SSS";
     if (self._header == refreshView) {
-        for (int i = 0; i<5; i++) {
-            [self._data insertObject:[formatter stringFromDate:[NSDate date]] atIndex:0];
-        }
+       
         
         
         [self startHttp:@""];
         
     } else {
-        for (int i = 0; i<5; i++) {
-            [self._data addObject:[formatter stringFromDate:[NSDate date]]];
-        }
+        
     }
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self.tableview selector:@selector(reloadData) userInfo:nil repeats:NO];
+    //[NSTimer scheduledTimerWithTimeInterval:1 target:self.tableview selector:@selector(reloadData) userInfo:nil repeats:NO];
 }
 
 - (void)dealloc
@@ -96,7 +94,10 @@
         cell.backgroundColor = [UIColor clearColor];
     }
 
-    
+    NSMutableDictionary* singleData = [self._data objectAtIndex:indexPath.row];
+    [imageCacheManager setImageView:cell.image withUrlString:[singleData valueForKey:@"image"]];
+    cell.title.text = [singleData valueForKey:@"title"];
+    cell.contentString.text = [singleData valueForKey:@"content"];
    
     
     return cell;
@@ -107,7 +108,13 @@
     return 113;
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    paperDetailWebViewController* detail = [[paperDetailWebViewController alloc] initWithNibName:@"paperDetailWebViewController" bundle:nil];
+    
+    detail.urlString= [[self._data objectAtIndex:indexPath.row] valueForKey:@"urlstring"];
+    [self.navigationController pushViewController:detail animated:YES];
+}
 
 
 
@@ -136,6 +143,7 @@
     
     NSLog(@"the return is %@", responseString);
     [self getPagesInformation:responseString];
+    [self.tableview reloadData];
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request
@@ -168,25 +176,39 @@ static int IS_loadingMore = 0;
 
     }
     for (unsigned i = 0; i< [pagesArray count]; i++) {
-        NSString* temp = [pagesArray objectAtIndex:i];
-        temp = [temp stringByReplacingOccurrencesOfString:@"</a>" withString:@"</a>\n"];
         
-        NSLog(@"%@",temp);
-        
-        NSArray* imageArray= [temp stringsByExtractingGroupsUsingRegexPattern:@"<imgsrc=(.*)/></"];
-        NSLog(@"The image string is %@", [imageArray objectAtIndex:0]);
-        
-        NSArray* titleArray = [temp stringsByExtractingGroupsUsingRegexPattern:@"title\">.*\">(.*)</a>"];
-        NSLog(@"the title string is %@", [titleArray objectAtIndex:0]);
-        
-        NSArray* contentArray = [temp stringsByExtractingGroupsUsingRegexPattern:@"<divclass=\"text\">(.*)"];
-        NSLog(@"the content string is %@", [contentArray objectAtIndex:0]);
-        
-        NSArray* urlArray = [temp stringsByExtractingGroupsUsingRegexPattern:@"atarget=\"_blank\"href=(.*)\">"];
-        NSLog(@"the detail url string is %@", [urlArray objectAtIndex:0]);
-        
-        
-               NSLog(@"%@",temp);
+        @try {
+            NSString* temp = [pagesArray objectAtIndex:i];
+            temp = [temp stringByReplacingOccurrencesOfString:@"</a>" withString:@"</a>\n"];
+            
+            NSLog(@"%@",temp);
+            
+            NSArray* imageArray= [temp stringsByExtractingGroupsUsingRegexPattern:@"<imgsrc=\"(.*)\"/></"];
+            NSLog(@"The image string is %@", [imageArray objectAtIndex:0]);
+            
+            NSArray* titleArray = [temp stringsByExtractingGroupsUsingRegexPattern:@"title\">.*\">(.*)</a>"];
+            NSLog(@"the title string is %@", [titleArray objectAtIndex:0]);
+            
+            NSArray* contentArray = [temp stringsByExtractingGroupsUsingRegexPattern:@"<divclass=\"text\">(.*)"];
+            NSLog(@"the content string is %@", [contentArray objectAtIndex:0]);
+            
+            NSArray* urlArray = [temp stringsByExtractingGroupsUsingRegexPattern:@"atarget=\"_blank\"href=\"(.*)\">"];
+            NSLog(@"the detail url string is %@", [urlArray objectAtIndex:0]);
+            
+            NSMutableDictionary* singleData = [[NSMutableDictionary alloc] init];
+            [singleData setObject:[imageArray objectAtIndex:0] forKey:@"image"];
+            [singleData setObject:[titleArray objectAtIndex:0] forKey:@"title"];
+            [singleData setObject:[contentArray objectAtIndex:0] forKey:@"content"];
+            [singleData setObject:[urlArray objectAtIndex:0] forKey:@"urlstring"];
+            
+            [self._data addObject:singleData];
+            
+            NSLog(@"%@",temp);
+
+        }
+        @catch (NSException *exception) {
+            ;
+        }
         
     }
 }

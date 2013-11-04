@@ -74,6 +74,9 @@
 		6BE3FCAD147A096500CDEC04 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BE3FCAC147A096500CDEC04 /* CoreGraphics.framework */; };
 		6BE3FCC4147A09E400CDEC04 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BE3FCC3147A09E400CDEC04 /* QuartzCore.framework */; };
 		6BE3FCDA147A118200CDEC04 /* GHRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3FCD6147A118200CDEC04 /* GHRevealViewController.m */; };
+		FA38959418279CCD00507CDE /* imageCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA38959318279CCD00507CDE /* imageCacheManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA38959818279FB800507CDE /* paperDetailWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA38959618279FB800507CDE /* paperDetailWebViewController.m */; };
+		FA38959918279FB800507CDE /* paperDetailWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA38959718279FB800507CDE /* paperDetailWebViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -198,6 +201,11 @@
 		6BE3FCC3147A09E400CDEC04 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6BE3FCD5147A118100CDEC04 /* GHRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHRevealViewController.h; sourceTree = "<group>"; };
 		6BE3FCD6147A118200CDEC04 /* GHRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHRevealViewController.m; sourceTree = "<group>"; };
+		FA38959218279CCD00507CDE /* imageCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imageCacheManager.h; sourceTree = "<group>"; };
+		FA38959318279CCD00507CDE /* imageCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imageCacheManager.m; sourceTree = "<group>"; };
+		FA38959518279FB800507CDE /* paperDetailWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paperDetailWebViewController.h; sourceTree = SOURCE_ROOT; };
+		FA38959618279FB800507CDE /* paperDetailWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = paperDetailWebViewController.m; sourceTree = SOURCE_ROOT; };
+		FA38959718279FB800507CDE /* paperDetailWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = paperDetailWebViewController.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +340,8 @@
 		6B74312915C23F4B00474C2E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FA38959218279CCD00507CDE /* imageCacheManager.h */,
+				FA38959318279CCD00507CDE /* imageCacheManager.m */,
 				18ED53E4179BC907005833B9 /* admob */,
 				18FD9CEB179BC1D8007B2529 /* libMobClickLibrary.a */,
 				18FD9CEC179BC1D8007B2529 /* MobClick.h */,
@@ -372,6 +382,9 @@
 				18F132801826431E008CADBE /* paperCellViewController.h */,
 				18F132811826431E008CADBE /* paperCellViewController.m */,
 				18F132821826431E008CADBE /* paperCellViewController.xib */,
+				FA38959518279FB800507CDE /* paperDetailWebViewController.h */,
+				FA38959618279FB800507CDE /* paperDetailWebViewController.m */,
+				FA38959718279FB800507CDE /* paperDetailWebViewController.xib */,
 				6BE3FCAF147A096500CDEC04 /* Supporting Files */,
 			);
 			name = Demo;
@@ -532,6 +545,7 @@
 				18ED53F6179BCEA1005833B9 /* Default@2x.png in Resources */,
 				18ED53F7179BCEA1005833B9 /* icon.png in Resources */,
 				18ED53F8179BCEA1005833B9 /* icon@2x.png in Resources */,
+				FA38959918279FB800507CDE /* paperDetailWebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +571,7 @@
 				18F1327E18263E35008CADBE /* MJRefreshFooterView.m in Sources */,
 				18C60EA317998E5600EE55FC /* ASIDataDecompressor.m in Sources */,
 				18C60EA417998E5600EE55FC /* ASIDownloadCache.m in Sources */,
+				FA38959818279FB800507CDE /* paperDetailWebViewController.m in Sources */,
 				18C60EA517998E5600EE55FC /* ASIFormDataRequest.m in Sources */,
 				18C60EA617998E5600EE55FC /* ASIHTTPRequest.m in Sources */,
 				18C60EA717998E5600EE55FC /* ASIInputStream.m in Sources */,
@@ -566,6 +581,7 @@
 				18C60EAA17998E5600EE55FC /* Reachability.m in Sources */,
 				18C60EAB17998E5600EE55FC /* WebImageRefreshView.m in Sources */,
 				18081737179A3C1900C83D1A /* SLGlowingTextField.m in Sources */,
+				FA38959418279CCD00507CDE /* imageCacheManager.m in Sources */,
 				1813B562179A433200D4EB21 /* TestButtonViewController.m in Sources */,
 				1813B564179A433200D4EB21 /* UIGlossyButton.m in Sources */,
 				1813B565179A433200D4EB21 /* UIGlossyButtonAppDelegate.m in Sources */,
@@ -676,6 +692,7 @@
 		6BE3FCBD147A096500CDEC04 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: huang zhifang (REA22B5B3H)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo/GHSidebarNav-Prefix.pch";
 				INFOPLIST_FILE = "Demo/GHSidebarNav-Info.plist";
@@ -686,6 +703,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -693,6 +711,7 @@
 		6BE3FCBE147A096500CDEC04 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: huang zhifang (REA22B5B3H)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo/GHSidebarNav-Prefix.pch";
 				INFOPLIST_FILE = "Demo/GHSidebarNav-Info.plist";
@@ -703,6 +722,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

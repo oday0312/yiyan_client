@@ -6,18 +6,10 @@
 //  Copyright (c) 2012 Greg Haines. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 @class GHRevealViewController;
 
-@interface GHMenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-@private
-	GHRevealViewController *_sidebarVC;
-	UISearchBar *_searchBar;
-	UITableView *_menuTableView;
-	NSArray *_headers;
-	NSArray *_controllers;
-	NSArray *_cellInfos;
-}
+
+@interface GHMenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 - (id)initWithSidebarViewController:(GHRevealViewController *)sidebarVC 
 					  withSearchBar:(UISearchBar *)searchBar 

@@ -13,6 +13,8 @@
 #import "GHSidebarSearchViewController.h"
 #import "GHSidebarSearchViewControllerDelegate.h"
 #import "MobClick.h"
+#import "imageCacheManager.h"
+
 #import "paperListViewController.h"
 #pragma mark -
 #pragma mark Private Interface
@@ -35,7 +37,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [MobClick startWithAppkey:@"4ff7ec16527015083e00000b"];
-    
+    [imageCacheManager initCacheDirectory];
 	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:NO];
 	
 	UIColor *bgColor = [UIColor colorWithRed:(50.0f/255.0f) green:(57.0f/255.0f) blue:(74.0f/255.0f) alpha:1.0f];
