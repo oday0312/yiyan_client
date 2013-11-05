@@ -11,6 +11,7 @@
 #import "NSString+PDRegex.h"
 #import "imageCacheManager.h"
 #import "paperDetailWebViewController.h"
+#import "DZWebBrowser.h"
 @interface paperListViewController ()
 
 @end
@@ -61,6 +62,9 @@
         [self startHttp:@""];
         
     } else {
+        ///
+        IS_loadingMore = 1;
+        [self startHttp:@""];
         
     }
     //[NSTimer scheduledTimerWithTimeInterval:1 target:self.tableview selector:@selector(reloadData) userInfo:nil repeats:NO];
@@ -92,6 +96,7 @@
         NSArray *aNib = [[NSBundle mainBundle]loadNibNamed:@"paperCellViewController" owner:self options:nil];
         cell = [aNib objectAtIndex:0];
         cell.backgroundColor = [UIColor clearColor];
+        [cell.image setContentMode:UIViewContentModeScaleAspectFit];
     }
 
     NSMutableDictionary* singleData = [self._data objectAtIndex:indexPath.row];
@@ -110,19 +115,34 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    paperDetailWebViewController* detail = [[paperDetailWebViewController alloc] initWithNibName:@"paperDetailWebViewController" bundle:nil];
     
-    detail.urlString= [[self._data objectAtIndex:indexPath.row] valueForKey:@"urlstring"];
-    [self.navigationController pushViewController:detail animated:YES];
+    paperDetailWebViewController* detail = [[paperDetailWebViewController alloc] initWithNibName:@"paperDetailWebViewController" bundle:nil];
+   
+   detail.urlString= [[self._data objectAtIndex:indexPath.row] valueForKey:@"urlstring"];
+//    [self.navigationController pushViewController:detail animated:YES];
+    
+    
+    
+    
+    NSURL *URL = [NSURL URLWithString: detail.urlString];
+    
+    DZWebBrowser *webBrowser = [[DZWebBrowser alloc] initWebBrowserWithURL:URL];
+    webBrowser.showProgress = YES;
+    webBrowser.allowSharing = YES;
+     webBrowser.resourceBundleName = @"custom-controls";
+    UINavigationController *webBrowserNC = [[UINavigationController alloc] initWithRootViewController:webBrowser];
+    [self presentViewController:webBrowserNC animated:YES completion:NULL];
 }
 
 
-
+static int pageIndex = 1;
 -(void)startHttp:(NSString*)inputString
 {
-    
+    if (IS_loadingMore) {
+        pageIndex ++;
+    }
    
-    NSString* urlstring = [@"" stringByAppendingFormat:@"http://select.yeeyan.org/lists/social/horizontal/1"];
+    NSString* urlstring = [@"" stringByAppendingFormat:@"http://select.yeeyan.org/lists/social/horizontal/%d", pageIndex];
     NSURL *url = [NSURL URLWithString:urlstring];
     
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
@@ -150,13 +170,19 @@
 
 {
     
-    NSError *error = [request error];
-    NSLog(@"the return is %@", @"error ");
+    //NSError *error = [request error];
+    //NSLog(@"the return is %@", @"error ");
     
 }
 static int IS_loadingMore = 0;
 -(void)getPagesInformation:(NSString*)inputstring
 {
+    if (IS_loadingMore==1) {
+        IS_loadingMore = 0;
+    }
+    else{
+        [self._data removeAllObjects];
+    }
     
     inputstring = [inputstring stringByReplacingOccurrencesOfString:@" " withString:@""];
     inputstring = [inputstring stringByReplacingOccurrencesOfString:@"\r" withString:@""];
@@ -218,25 +244,3 @@ static int IS_loadingMore = 0;
 @end
 
 
-
-
-//
-//-(void)startHttp:(NSString*)inputString
-//{
-//    
-//    ///////
-//    NSString *postURL = [NSString stringWithFormat:@"http://sfz.8684.cn/"];
-//    
-//    ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:postURL]];
-//    
-//    if ([inputString isEqualToString:@"a"]) {
-//        [request addPostValue:@"43010419860419588X" forKey:@"userid"];
-//    }
-//    else{
-//        [request addPostValue:inputString forKey:@"userid"];
-//        
-//    }
-//    
-//    request.delegate= self;
-//    [request startSynchronous];
-//}

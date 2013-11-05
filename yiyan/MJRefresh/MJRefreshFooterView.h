@@ -8,4 +8,5 @@
 
 #import "MJRefreshBaseView.h"
 @interface MJRefreshFooterView : MJRefreshBaseView
+
 @end

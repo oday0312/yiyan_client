@@ -77,6 +77,13 @@
 		FA38959418279CCD00507CDE /* imageCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA38959318279CCD00507CDE /* imageCacheManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FA38959818279FB800507CDE /* paperDetailWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA38959618279FB800507CDE /* paperDetailWebViewController.m */; };
 		FA38959918279FB800507CDE /* paperDetailWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA38959718279FB800507CDE /* paperDetailWebViewController.xib */; };
+		FA8AE71218289F630022FB46 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8AE70918289F630022FB46 /* NJKWebViewProgress.m */; };
+		FA8AE71418289F630022FB46 /* SDCachedURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8AE70F18289F630022FB46 /* SDCachedURLResponse.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA8AE71518289F630022FB46 /* SDURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8AE71118289F630022FB46 /* SDURLCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA8AE71718289F930022FB46 /* custom-controls.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA8AE71618289F930022FB46 /* custom-controls.bundle */; };
+		FA8AE71B1828A0EF0022FB46 /* DZWebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8AE7191828A0EF0022FB46 /* DZWebBrowser.m */; };
+		FA8AE71C1828A0EF0022FB46 /* script.js in Sources */ = {isa = PBXBuildFile; fileRef = FA8AE71A1828A0EF0022FB46 /* script.js */; };
+		FA8AE71E1828A18F0022FB46 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA8AE71D1828A18F0022FB46 /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -206,6 +213,17 @@
 		FA38959518279FB800507CDE /* paperDetailWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paperDetailWebViewController.h; sourceTree = SOURCE_ROOT; };
 		FA38959618279FB800507CDE /* paperDetailWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = paperDetailWebViewController.m; sourceTree = SOURCE_ROOT; };
 		FA38959718279FB800507CDE /* paperDetailWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = paperDetailWebViewController.xib; sourceTree = SOURCE_ROOT; };
+		FA8AE70818289F630022FB46 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
+		FA8AE70918289F630022FB46 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
+		FA8AE70E18289F630022FB46 /* SDCachedURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCachedURLResponse.h; sourceTree = "<group>"; };
+		FA8AE70F18289F630022FB46 /* SDCachedURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCachedURLResponse.m; sourceTree = "<group>"; };
+		FA8AE71018289F630022FB46 /* SDURLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDURLCache.h; sourceTree = "<group>"; };
+		FA8AE71118289F630022FB46 /* SDURLCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDURLCache.m; sourceTree = "<group>"; };
+		FA8AE71618289F930022FB46 /* custom-controls.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "custom-controls.bundle"; sourceTree = SOURCE_ROOT; };
+		FA8AE7181828A0EF0022FB46 /* DZWebBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZWebBrowser.h; sourceTree = SOURCE_ROOT; };
+		FA8AE7191828A0EF0022FB46 /* DZWebBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZWebBrowser.m; sourceTree = SOURCE_ROOT; };
+		FA8AE71A1828A0EF0022FB46 /* script.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = SOURCE_ROOT; };
+		FA8AE71D1828A18F0022FB46 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +231,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8AE71E1828A18F0022FB46 /* Social.framework in Frameworks */,
 				18ED53F0179BCABB005833B9 /* MessageUI.framework in Frameworks */,
 				18ED53EE179BCAA0005833B9 /* AudioToolbox.framework in Frameworks */,
 				1808172E179A1B6500C83D1A /* MobileCoreServices.framework in Frameworks */,
@@ -379,12 +398,13 @@
 				18F1326E18263C32008CADBE /* paperListViewController.h */,
 				18F1326F18263C32008CADBE /* paperListViewController.m */,
 				18F1327018263C32008CADBE /* paperListViewController.xib */,
-				18F132801826431E008CADBE /* paperCellViewController.h */,
-				18F132811826431E008CADBE /* paperCellViewController.m */,
-				18F132821826431E008CADBE /* paperCellViewController.xib */,
 				FA38959518279FB800507CDE /* paperDetailWebViewController.h */,
 				FA38959618279FB800507CDE /* paperDetailWebViewController.m */,
 				FA38959718279FB800507CDE /* paperDetailWebViewController.xib */,
+				18F132801826431E008CADBE /* paperCellViewController.h */,
+				18F132811826431E008CADBE /* paperCellViewController.m */,
+				18F132821826431E008CADBE /* paperCellViewController.xib */,
+				FA8AE70518289EDE0022FB46 /* browser */,
 				6BE3FCAF147A096500CDEC04 /* Supporting Files */,
 			);
 			name = Demo;
@@ -427,6 +447,7 @@
 		6BE3FCA7147A096500CDEC04 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA8AE71D1828A18F0022FB46 /* Social.framework */,
 				18ED53EF179BCABB005833B9 /* MessageUI.framework */,
 				18ED53ED179BCAA0005833B9 /* AudioToolbox.framework */,
 				1808172D179A1B6500C83D1A /* MobileCoreServices.framework */,
@@ -479,6 +500,47 @@
 			path = GHSidebarNav;
 			sourceTree = "<group>";
 		};
+		FA8AE70518289EDE0022FB46 /* browser */ = {
+			isa = PBXGroup;
+			children = (
+				FA8AE7181828A0EF0022FB46 /* DZWebBrowser.h */,
+				FA8AE7191828A0EF0022FB46 /* DZWebBrowser.m */,
+				FA8AE71A1828A0EF0022FB46 /* script.js */,
+				FA8AE71618289F930022FB46 /* custom-controls.bundle */,
+				FA8AE70618289F630022FB46 /* External */,
+			);
+			name = browser;
+			sourceTree = "<group>";
+		};
+		FA8AE70618289F630022FB46 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				FA8AE70718289F630022FB46 /* NJKWebViewProgress */,
+				FA8AE70D18289F630022FB46 /* SDURLCache */,
+			);
+			path = External;
+			sourceTree = SOURCE_ROOT;
+		};
+		FA8AE70718289F630022FB46 /* NJKWebViewProgress */ = {
+			isa = PBXGroup;
+			children = (
+				FA8AE70818289F630022FB46 /* NJKWebViewProgress.h */,
+				FA8AE70918289F630022FB46 /* NJKWebViewProgress.m */,
+			);
+			path = NJKWebViewProgress;
+			sourceTree = "<group>";
+		};
+		FA8AE70D18289F630022FB46 /* SDURLCache */ = {
+			isa = PBXGroup;
+			children = (
+				FA8AE70E18289F630022FB46 /* SDCachedURLResponse.h */,
+				FA8AE70F18289F630022FB46 /* SDCachedURLResponse.m */,
+				FA8AE71018289F630022FB46 /* SDURLCache.h */,
+				FA8AE71118289F630022FB46 /* SDURLCache.m */,
+			);
+			path = SDURLCache;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -529,6 +591,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8AE71718289F930022FB46 /* custom-controls.bundle in Resources */,
 				6BBA75C914873E18004E1A5E /* InfoPlist.strings in Resources */,
 				6BBA75CE14873E74004E1A5E /* searchBarBG.png in Resources */,
 				6BBA75CF14873E74004E1A5E /* user.png in Resources */,
@@ -562,13 +625,16 @@
 				6BBA75C114873DFE004E1A5E /* GHPushedViewController.m in Sources */,
 				6BBA75C214873DFE004E1A5E /* GHRootViewController.m in Sources */,
 				6BBA75CB14873E18004E1A5E /* main.m in Sources */,
+				FA8AE71518289F630022FB46 /* SDURLCache.m in Sources */,
 				6B4BD80214B10447004BE0CC /* GHMenuCell.m in Sources */,
 				18F1327D18263E35008CADBE /* MJRefreshBaseView.m in Sources */,
 				6B014F5214B3DAC4001E922B /* GHMenuViewController.m in Sources */,
 				6B014F5714B41DB6001E922B /* GHSidebarSearchViewController.m in Sources */,
 				18C60EA117998E5600EE55FC /* ASIAuthenticationDialog.m in Sources */,
 				18C60EA217998E5600EE55FC /* ASIDataCompressor.m in Sources */,
+				FA8AE71C1828A0EF0022FB46 /* script.js in Sources */,
 				18F1327E18263E35008CADBE /* MJRefreshFooterView.m in Sources */,
+				FA8AE71418289F630022FB46 /* SDCachedURLResponse.m in Sources */,
 				18C60EA317998E5600EE55FC /* ASIDataDecompressor.m in Sources */,
 				18C60EA417998E5600EE55FC /* ASIDownloadCache.m in Sources */,
 				FA38959818279FB800507CDE /* paperDetailWebViewController.m in Sources */,
@@ -590,10 +656,12 @@
 				18A85A1F179A7D39005037DA /* RegexOnNSStringIOSExampleTests.m in Sources */,
 				18F1327118263C32008CADBE /* paperListViewController.m in Sources */,
 				18A85A42179AA046005037DA /* NSDate+convenience.m in Sources */,
+				FA8AE71218289F630022FB46 /* NJKWebViewProgress.m in Sources */,
 				18A85A43179AA046005037DA /* NSMutableArray+convenience.m in Sources */,
 				18A85A44179AA046005037DA /* UIColor+expanded.m in Sources */,
 				18A85A45179AA046005037DA /* UIView+convenience.m in Sources */,
 				18A85A46179AA046005037DA /* VRGCalendarView.m in Sources */,
+				FA8AE71B1828A0EF0022FB46 /* DZWebBrowser.m in Sources */,
 				18A85A47179AA046005037DA /* VRGViewController.m in Sources */,
 				18A85A4B179AA689005037DA /* DataSingleton.m in Sources */,
 				18A85A4E179AA693005037DA /* constant.m in Sources */,

@@ -87,4 +87,6 @@ typedef void (^BeginRefreshingBlock)(MJRefreshBaseView *refreshView);
 
 // 交给子类去实现
 - (void)setState:(RefreshState)state;
+
 @end
+

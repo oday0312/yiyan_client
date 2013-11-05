@@ -28,6 +28,8 @@
     [super viewDidLoad];
     self.webview.backgroundColor = [UIColor clearColor];
     self.webview.delegate = self;
+    
+    self.webview.scalesPageToFit = YES;
     NSURL* url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     if (url) {
         NSURLRequest* request = [NSURLRequest requestWithURL:url];
