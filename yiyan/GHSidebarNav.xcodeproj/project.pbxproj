@@ -17,6 +17,7 @@
 		1813B564179A433200D4EB21 /* UIGlossyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1813B55D179A433200D4EB21 /* UIGlossyButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1813B565179A433200D4EB21 /* UIGlossyButtonAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1813B55F179A433200D4EB21 /* UIGlossyButtonAppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1813B566179A433200D4EB21 /* UIView+LayerEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 1813B561179A433200D4EB21 /* UIView+LayerEffects.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		189A3C3A182A8777006D6BC7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 189A3C39182A8777006D6BC7 /* Default-568h@2x.png */; };
 		18A85A1E179A7D39005037DA /* NSString+PDRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A85A1C179A7D39005037DA /* NSString+PDRegex.m */; };
 		18A85A1F179A7D39005037DA /* RegexOnNSStringIOSExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A85A1D179A7D39005037DA /* RegexOnNSStringIOSExampleTests.m */; };
 		18A85A4B179AA689005037DA /* DataSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A85A4A179AA689005037DA /* DataSingleton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -95,6 +96,7 @@
 		1813B55F179A433200D4EB21 /* UIGlossyButtonAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIGlossyButtonAppDelegate.m; sourceTree = "<group>"; };
 		1813B560179A433200D4EB21 /* UIView+LayerEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LayerEffects.h"; sourceTree = "<group>"; };
 		1813B561179A433200D4EB21 /* UIView+LayerEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayerEffects.m"; sourceTree = "<group>"; };
+		189A3C39182A8777006D6BC7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		18A85A1B179A7D39005037DA /* NSString+PDRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PDRegex.h"; sourceTree = "<group>"; };
 		18A85A1C179A7D39005037DA /* NSString+PDRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PDRegex.m"; sourceTree = "<group>"; };
 		18A85A1D179A7D39005037DA /* RegexOnNSStringIOSExampleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexOnNSStringIOSExampleTests.m; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				18ED53F1179BCEA1005833B9 /* Default.png */,
+				189A3C39182A8777006D6BC7 /* Default-568h@2x.png */,
 				18ED53F2179BCEA1005833B9 /* Default@2x.png */,
 				18ED53F3179BCEA1005833B9 /* icon.png */,
 				18ED53F4179BCEA1005833B9 /* icon@2x.png */,
@@ -561,6 +564,7 @@
 				6B0CAC0314BD064800394B5D /* searchTextBG.png in Resources */,
 				18C60E841799839600EE55FC /* navgationbackground.png in Resources */,
 				18F1327C18263E35008CADBE /* MJRefresh.bundle in Resources */,
+				189A3C3A182A8777006D6BC7 /* Default-568h@2x.png in Resources */,
 				1813B563179A433200D4EB21 /* TestButtonViewController.xib in Resources */,
 				18ED53F5179BCEA1005833B9 /* Default.png in Resources */,
 				18ED53F6179BCEA1005833B9 /* Default@2x.png in Resources */,
