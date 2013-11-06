@@ -21,4 +21,7 @@
 @property(nonatomic, retain) MJRefreshHeaderView *_header;
 
 @property(nonatomic, retain) NSMutableArray *_data;
+@property(nonatomic, assign)NSString* urlStringHead;
+
+
 @end

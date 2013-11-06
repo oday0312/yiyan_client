@@ -30,6 +30,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //set defaul string
+    
+    
+    
     // 下拉刷新
     self._header = [[MJRefreshHeaderView alloc] init];
     self._header.delegate = self;
@@ -42,6 +47,20 @@
     
     // 假数据
     self._data = [NSMutableArray array];
+    
+    
+    
+    //get local cache html string
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    NSString* htmlString = [ud valueForKey:self.urlStringHead];
+    if (htmlString!=Nil) {
+        [self getPagesInformation:htmlString];
+        [self.tableview reloadData];
+    }
+    
+    
+    
+    [self startHttp:@""];
 }
 
 - (void)didReceiveMemoryWarning
@@ -142,7 +161,7 @@ static int pageIndex = 1;
         pageIndex ++;
     }
    
-    NSString* urlstring = [@"" stringByAppendingFormat:@"http://select.yeeyan.org/lists/social/horizontal/%d", pageIndex];
+    NSString* urlstring = [@"" stringByAppendingFormat:@"%@/horizontal/%d", self.urlStringHead,pageIndex];
     NSURL *url = [NSURL URLWithString:urlstring];
     
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
@@ -162,8 +181,21 @@ static int pageIndex = 1;
     NSString*  responseString =  [[NSString alloc] initWithData:request.responseData encoding:NSUTF8StringEncoding] ;
     
     NSLog(@"the return is %@", responseString);
+    
+    
+    //////store to local cache html string
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:responseString forKey:self.urlStringHead];
+   
+    
+    
+    
+    
     [self getPagesInformation:responseString];
     [self.tableview reloadData];
+    
+    
+    
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request

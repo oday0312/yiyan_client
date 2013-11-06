@@ -65,27 +65,43 @@
 		[NSNull null],
 		@"常用"
 	];
+    
+    paperListViewController* controller1 = [[paperListViewController alloc] initWithTitle:@"译言精选－社会" withRevealBlock:revealBlock];
+    paperListViewController* controller2 = [[paperListViewController alloc] initWithTitle:@"译言精选－科学" withRevealBlock:revealBlock];
+    paperListViewController* controller3 = [[paperListViewController alloc] initWithTitle:@"译言精选－生活" withRevealBlock:revealBlock];
+    paperListViewController* controller4 = [[paperListViewController alloc] initWithTitle:@"译言精选－经济" withRevealBlock:revealBlock];
+    paperListViewController* controller5 = [[paperListViewController alloc] initWithTitle:@"译言精选－文化" withRevealBlock:revealBlock];
+    
+    controller1.urlStringHead = @"http://select.yeeyan.org/lists/social";
+    controller2.urlStringHead = @"http://select.yeeyan.org/lists/science";
+    controller3.urlStringHead = @"http://select.yeeyan.org/lists/lifestyle";
+    controller4.urlStringHead = @"http://select.yeeyan.org/lists/economic";
+    controller5.urlStringHead = @"http://select.yeeyan.org/lists/culture";
+    
 	NSArray *controllers = @[
 		@[
-			[[UINavigationController alloc] initWithRootViewController:[[paperListViewController alloc] initWithTitle:@"译言精选－社会" withRevealBlock:revealBlock]]
+            [[UINavigationController alloc] initWithRootViewController:controller1]
 		],
 		@[
-			[[UINavigationController alloc] initWithRootViewController:[[paperListViewController alloc] initWithTitle:@"译言精选－科学" withRevealBlock:revealBlock]],
-			[[UINavigationController alloc] initWithRootViewController:[[paperListViewController alloc] initWithTitle:@"译言精选－生活" withRevealBlock:revealBlock]],
-			[[UINavigationController alloc] initWithRootViewController:[[paperListViewController alloc] initWithTitle:@"译言精选－经济" withRevealBlock:revealBlock]],
-			[[UINavigationController alloc] initWithRootViewController:[[paperListViewController alloc] initWithTitle:@"译言精选－文化" withRevealBlock:revealBlock]],
+			[[UINavigationController alloc] initWithRootViewController:controller2],
+			[[UINavigationController alloc] initWithRootViewController:controller3],
+			[[UINavigationController alloc] initWithRootViewController:controller4],
+			[[UINavigationController alloc] initWithRootViewController:controller5],
 			
 		]
 	];
+    
+    
+    
 	NSArray *cellInfos = @[
 		@[
-			@{kSidebarCellImageKey: [UIImage imageNamed:@"searchBarIcon.png"], kSidebarCellTextKey: NSLocalizedString(@"社会", @"")}
+			@{kSidebarCellImageKey: [UIImage imageNamed:@"searchBarIcon.png"], kSidebarCellTextKey: NSLocalizedString(@"译言精选-社会", @"")}
 		],
 		@[
-			@{kSidebarCellImageKey: [UIImage imageNamed:@"user.png"], kSidebarCellTextKey: NSLocalizedString(@"科学", @"")},
-			@{kSidebarCellImageKey: [UIImage imageNamed:@"user.png"], kSidebarCellTextKey: NSLocalizedString(@"生活", @"")},
-			@{kSidebarCellImageKey: [UIImage imageNamed:@"user.png"], kSidebarCellTextKey: NSLocalizedString(@"经济", @"")},
-			@{kSidebarCellImageKey: [UIImage imageNamed:@"user.png"], kSidebarCellTextKey: NSLocalizedString(@"文化", @"")},
+			@{kSidebarCellImageKey: [UIImage imageNamed:@"user.png"], kSidebarCellTextKey: NSLocalizedString(@"译言精选-科学", @"")},
+			@{kSidebarCellImageKey: [UIImage imageNamed:@"user.png"], kSidebarCellTextKey: NSLocalizedString(@"译言精选-生活", @"")},
+			@{kSidebarCellImageKey: [UIImage imageNamed:@"user.png"], kSidebarCellTextKey: NSLocalizedString(@"译言精选-经济", @"")},
+			@{kSidebarCellImageKey: [UIImage imageNamed:@"user.png"], kSidebarCellTextKey: NSLocalizedString(@"译言精选-文化", @"")},
 			
 		]
 	];
