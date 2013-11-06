@@ -19,13 +19,6 @@
 		1813B566179A433200D4EB21 /* UIView+LayerEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 1813B561179A433200D4EB21 /* UIView+LayerEffects.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		18A85A1E179A7D39005037DA /* NSString+PDRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A85A1C179A7D39005037DA /* NSString+PDRegex.m */; };
 		18A85A1F179A7D39005037DA /* RegexOnNSStringIOSExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A85A1D179A7D39005037DA /* RegexOnNSStringIOSExampleTests.m */; };
-		18A85A42179AA046005037DA /* NSDate+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A85A36179AA046005037DA /* NSDate+convenience.m */; };
-		18A85A43179AA046005037DA /* NSMutableArray+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A85A38179AA046005037DA /* NSMutableArray+convenience.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		18A85A44179AA046005037DA /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A85A3A179AA046005037DA /* UIColor+expanded.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		18A85A45179AA046005037DA /* UIView+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A85A3C179AA046005037DA /* UIView+convenience.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		18A85A46179AA046005037DA /* VRGCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A85A3E179AA046005037DA /* VRGCalendarView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		18A85A47179AA046005037DA /* VRGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A85A40179AA046005037DA /* VRGViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		18A85A48179AA046005037DA /* VRGViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A85A41179AA046005037DA /* VRGViewController.xib */; };
 		18A85A4B179AA689005037DA /* DataSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A85A4A179AA689005037DA /* DataSingleton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		18A85A4E179AA693005037DA /* constant.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A85A4D179AA693005037DA /* constant.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		18C60E841799839600EE55FC /* navgationbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C60E831799839600EE55FC /* navgationbackground.png */; };
@@ -105,19 +98,6 @@
 		18A85A1B179A7D39005037DA /* NSString+PDRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PDRegex.h"; sourceTree = "<group>"; };
 		18A85A1C179A7D39005037DA /* NSString+PDRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PDRegex.m"; sourceTree = "<group>"; };
 		18A85A1D179A7D39005037DA /* RegexOnNSStringIOSExampleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexOnNSStringIOSExampleTests.m; sourceTree = "<group>"; };
-		18A85A35179AA046005037DA /* NSDate+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+convenience.h"; sourceTree = "<group>"; };
-		18A85A36179AA046005037DA /* NSDate+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+convenience.m"; sourceTree = "<group>"; };
-		18A85A37179AA046005037DA /* NSMutableArray+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+convenience.h"; sourceTree = "<group>"; };
-		18A85A38179AA046005037DA /* NSMutableArray+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+convenience.m"; sourceTree = "<group>"; };
-		18A85A39179AA046005037DA /* UIColor+expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+expanded.h"; sourceTree = "<group>"; };
-		18A85A3A179AA046005037DA /* UIColor+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+expanded.m"; sourceTree = "<group>"; };
-		18A85A3B179AA046005037DA /* UIView+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+convenience.h"; sourceTree = "<group>"; };
-		18A85A3C179AA046005037DA /* UIView+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+convenience.m"; sourceTree = "<group>"; };
-		18A85A3D179AA046005037DA /* VRGCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRGCalendarView.h; sourceTree = "<group>"; };
-		18A85A3E179AA046005037DA /* VRGCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VRGCalendarView.m; sourceTree = "<group>"; };
-		18A85A3F179AA046005037DA /* VRGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRGViewController.h; sourceTree = "<group>"; };
-		18A85A40179AA046005037DA /* VRGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VRGViewController.m; sourceTree = "<group>"; };
-		18A85A41179AA046005037DA /* VRGViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VRGViewController.xib; sourceTree = "<group>"; };
 		18A85A49179AA689005037DA /* DataSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSingleton.h; sourceTree = "<group>"; };
 		18A85A4A179AA689005037DA /* DataSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSingleton.m; sourceTree = "<group>"; };
 		18A85A4C179AA693005037DA /* constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constant.h; sourceTree = "<group>"; };
@@ -266,26 +246,6 @@
 			path = myButton;
 			sourceTree = "<group>";
 		};
-		18A85A34179AA046005037DA /* calender */ = {
-			isa = PBXGroup;
-			children = (
-				18A85A35179AA046005037DA /* NSDate+convenience.h */,
-				18A85A36179AA046005037DA /* NSDate+convenience.m */,
-				18A85A37179AA046005037DA /* NSMutableArray+convenience.h */,
-				18A85A38179AA046005037DA /* NSMutableArray+convenience.m */,
-				18A85A39179AA046005037DA /* UIColor+expanded.h */,
-				18A85A3A179AA046005037DA /* UIColor+expanded.m */,
-				18A85A3B179AA046005037DA /* UIView+convenience.h */,
-				18A85A3C179AA046005037DA /* UIView+convenience.m */,
-				18A85A3D179AA046005037DA /* VRGCalendarView.h */,
-				18A85A3E179AA046005037DA /* VRGCalendarView.m */,
-				18A85A3F179AA046005037DA /* VRGViewController.h */,
-				18A85A40179AA046005037DA /* VRGViewController.m */,
-				18A85A41179AA046005037DA /* VRGViewController.xib */,
-			);
-			path = calender;
-			sourceTree = "<group>";
-		};
 		18C60E8517998E5600EE55FC /* ASIHTTPRequest */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,16 +328,15 @@
 				18A85A4D179AA693005037DA /* constant.m */,
 				18A85A49179AA689005037DA /* DataSingleton.h */,
 				18A85A4A179AA689005037DA /* DataSingleton.m */,
-				18A85A34179AA046005037DA /* calender */,
 				18A85A1B179A7D39005037DA /* NSString+PDRegex.h */,
 				18A85A1C179A7D39005037DA /* NSString+PDRegex.m */,
 				18A85A1D179A7D39005037DA /* RegexOnNSStringIOSExampleTests.m */,
+				6B74312C15C23FBF00474C2E /* NSObject+Subscripts.h */,
 				1813B558179A433200D4EB21 /* myButton */,
 				18081735179A3C1900C83D1A /* SLGlowingTextField.h */,
-				18F1327318263E35008CADBE /* MJRefresh */,
 				18081736179A3C1900C83D1A /* SLGlowingTextField.m */,
+				18F1327318263E35008CADBE /* MJRefresh */,
 				18C60E8517998E5600EE55FC /* ASIHTTPRequest */,
-				6B74312C15C23FBF00474C2E /* NSObject+Subscripts.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -603,7 +562,6 @@
 				18C60E841799839600EE55FC /* navgationbackground.png in Resources */,
 				18F1327C18263E35008CADBE /* MJRefresh.bundle in Resources */,
 				1813B563179A433200D4EB21 /* TestButtonViewController.xib in Resources */,
-				18A85A48179AA046005037DA /* VRGViewController.xib in Resources */,
 				18ED53F5179BCEA1005833B9 /* Default.png in Resources */,
 				18ED53F6179BCEA1005833B9 /* Default@2x.png in Resources */,
 				18ED53F7179BCEA1005833B9 /* icon.png in Resources */,
@@ -655,14 +613,8 @@
 				18A85A1E179A7D39005037DA /* NSString+PDRegex.m in Sources */,
 				18A85A1F179A7D39005037DA /* RegexOnNSStringIOSExampleTests.m in Sources */,
 				18F1327118263C32008CADBE /* paperListViewController.m in Sources */,
-				18A85A42179AA046005037DA /* NSDate+convenience.m in Sources */,
 				FA8AE71218289F630022FB46 /* NJKWebViewProgress.m in Sources */,
-				18A85A43179AA046005037DA /* NSMutableArray+convenience.m in Sources */,
-				18A85A44179AA046005037DA /* UIColor+expanded.m in Sources */,
-				18A85A45179AA046005037DA /* UIView+convenience.m in Sources */,
-				18A85A46179AA046005037DA /* VRGCalendarView.m in Sources */,
 				FA8AE71B1828A0EF0022FB46 /* DZWebBrowser.m in Sources */,
-				18A85A47179AA046005037DA /* VRGViewController.m in Sources */,
 				18A85A4B179AA689005037DA /* DataSingleton.m in Sources */,
 				18A85A4E179AA693005037DA /* constant.m in Sources */,
 			);
