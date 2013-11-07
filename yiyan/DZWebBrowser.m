@@ -12,7 +12,7 @@
 #import "SDURLCache.h"
 #import "SDCachedURLResponse.h"
 #import <objc/runtime.h>
-
+#import "GADBannerView.h"
 #define kWebLoadingTimout 10.0
 #define kDefaultControlsBundleName @"default-controls"
 
@@ -140,6 +140,57 @@ NSString * const kNewAttachmentKey = @"kNewAttachmentKey";
     _shareButton.enabled = NO;
 }
 
+#define ADMOB_PUBLISH_ID @"a14ff805c200cec"
+#define iOS7_OR_LATER (systemVersion() >= 7)
+
+NSUInteger systemVersion() {
+    
+    static NSUInteger version = -1;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        version = [[[[[UIDevice currentDevice] systemVersion] componentsSeparatedByString:@"."] objectAtIndex:0] integerValue];
+    });
+    //    NSLog(@"version = %d", version);
+    return version;
+}
+-(void)addAdviewToCurrent
+{
+    // Do any additional setup after loading the view from its nib.
+    {
+        CGRect rx = [ UIScreen mainScreen ].bounds;
+        int cutHeight = 80;
+        if (iOS7_OR_LATER) {
+            cutHeight = 40;
+        }
+        else {
+            cutHeight = 80;
+        }
+            
+        self.adView = [[GADBannerView alloc]
+                       initWithFrame:CGRectMake(0.0,
+                                                self.view.frame.size.height -
+                                                GAD_SIZE_320x50.height-cutHeight,
+                                                GAD_SIZE_320x50.width,
+                                                GAD_SIZE_320x50.height)] ;
+        
+        // Specify the ad's "unit identifier." This is your AdMob Publisher ID.
+        self.adView.adUnitID = ADMOB_PUBLISH_ID;
+        
+        // Let the runtime know which UIViewController to restore after taking
+        // the user wherever the ad goes and add it to the view hierarchy.
+        self.adView.rootViewController = self;
+        self.adView.delegate = self;
+        
+        
+        [self.view addSubview:self.adView];
+        
+        
+        [self.adView loadRequest:[GADRequest request]];
+        
+    }
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -155,6 +206,7 @@ NSString * const kNewAttachmentKey = @"kNewAttachmentKey";
     else {
         [self.navigationItem setTitleView:self.titleView];
     }
+    [self addAdviewToCurrent];
 }
 
 - (void)viewWillAppear:(BOOL)animated

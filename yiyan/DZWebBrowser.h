@@ -13,13 +13,13 @@
 
 #import "Reachability.h"
 #import "NJKWebViewProgress.h"
-
+#import "GADBannerView.h"
 /** A simple iPhone/iPad web browser controller.
  */
 @interface DZWebBrowser : UIViewController <UIWebViewDelegate, NJKWebViewProgressDelegate,
 UISearchBarDelegate, UISearchDisplayDelegate,
 UIActionSheetDelegate, MFMailComposeViewControllerDelegate,
-UIGestureRecognizerDelegate>
+UIGestureRecognizerDelegate,GADBannerViewDelegate>
 
 /** The WebView control rendering the web contents. */
 @property (nonatomic, strong) UIWebView *webView;
@@ -39,7 +39,7 @@ UIGestureRecognizerDelegate>
 @property (nonatomic, strong) NSString *resourceBundleName;
 /** Set this value to YES, if the browser is pushed inside a UINavigationController stack. */
 @property (nonatomic, getter=isPushed) BOOL pushed;
-
+@property(nonatomic,retain) GADBannerView *adView;
 /* Returns a DZWebBrowser instanced initialized with a specific URL.
  *
  * @param URL An NSURL object.
